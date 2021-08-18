@@ -14,18 +14,17 @@ let windows = [
 	new Window('https://chunghwa.asia/utai/screenshots/screenshot_page_3_3.png', 3)
 ]
 
-# tag WindowItem
-# 	<self.outter_page_{window.page}.outter>
-# 		<div.inner_page_{window.page}.inner>
-# 			<img.screenshot_page_{window.page}_img.screenshot.item
-# 				src="{window.image}">  
+tag WindowItem
+	prop window_
+
+	<self.outter_page_{window_.page}.outter>
+		<div.inner_page_{window_.page}.inner>
+			<img.screenshot_page_{window_.page}_img.screenshot.window_
+				src="{window_.image}">  
 
 tag app
 	<self>
-		<> for window in windows
-			<div.outter_page_{window.page}.outter>
-				<div.inner_page_{window.page}.inner>
-					<img.screenshot_page_{window.page}_img.screenshot.item
-						src="{window.image}">
+		<> for window_ in windows
+			<WindowItem window_=window_>
 
 imba.mount <app>
