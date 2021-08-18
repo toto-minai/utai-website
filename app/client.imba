@@ -19,12 +19,12 @@ tag WindowItem
 
 	<self.outter_page_{window_.page}.outter>
 		<div.inner_page_{window_.page}.inner>
-			<img.screenshot_page_{window_.page}_img.screenshot.window_
-				src="{window_.image}">  
+			<img.screenshot_page_{window_.page}_img.screenshot.item
+				src=window_.image>
 
 tag app
 	<self>
-		<> for window_ in windows
-			<WindowItem window_=window_>
+		<> for window in windows
+			<WindowItem window_=window>
 
 imba.mount <app>
