@@ -63,6 +63,8 @@ a {
     border-radius: 12.2px;
 
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.36); 
+
+    position: absolute;
 }
 
 .outter_page_2 {
