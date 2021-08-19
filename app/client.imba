@@ -26,6 +26,7 @@ tag DesktopTag
 
 imba.mount <DesktopTag>
 
+
 const body = document.getElementsByTagName("body")[0]
 let desktop = new Desktop
 	body
@@ -45,15 +46,15 @@ window.onload = do
 
 		desktop.normalLayerUUIDs.push window.id
 
-	body.addEventListener "touchstart", drag, false
-	body.addEventListener "touched", drop, false
-	body.addEventListener "touchmove", move, false
+	body.addEventListener "touchstart", drag, no
+	body.addEventListener "touched", drop, no
+	body.addEventListener "touchmove", move, no
 
-	body.addEventListener "mousedown", drag, false
-	body.addEventListener "mouseup", drop, false
-	body.addEventListener "mousemove", move, false
+	body.addEventListener "mousedown", drag, no
+	body.addEventListener "mouseup", drop, no
+	body.addEventListener "mousemove", move, no
 
-	body.style.opacity = 1  # TODO: Could be removed
+	body.style.opacity = 1
 
 
 def drag e
@@ -100,7 +101,7 @@ def drop e
 
 def move e
 	if desktop.activeWindow
-		desktop.activeWindow.hasMoved = true
+		desktop.activeWindow.hasMoved = yes
 
 		if e.type is "touchmove"
 			desktop.activeWindow.translate

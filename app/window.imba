@@ -14,13 +14,15 @@ export class Window
 	outter
 
 	isActive
-	hasMoved # = false
+	hasMoved
+
+	floating = no
 
 	def dragged x, y
 		xStart = x
 		yStart = y
-		isActive = true
-		hasMoved = false
+		isActive = yes
+		hasMoved = no
 	
 	def dropped
 		if hasMoved
