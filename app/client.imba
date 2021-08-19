@@ -39,8 +39,8 @@ window.onload = do
 		window.outter = outter
 		window.ele = outter.querySelector ".item"
 		
-		let x = Math.random! * (desktop.width - outter.clientWidth)
-		let y = Math.random! * (desktop.height - outter.clientHeight)
+		const x = Math.random! * (desktop.width - outter.clientWidth)
+		const y = Math.random! * (desktop.height - outter.clientHeight)
 		window.coord = {x, y}
 
 		desktop.normalLayerUUIDs.push window.id
@@ -75,8 +75,8 @@ def drag e
 		return
 	
 	windows.forEach do(window)
-		let index = desktop.normalLayerUUIDs.indexOf window.id
-		let zIndex = index + 1
+		const index = desktop.normalLayerUUIDs.indexOf window.id
+		const zIndex = index + 1
 		window.outter.style.zIndex = zIndex
 		if index == desktop.normalLayerUUIDs.length - 1
 			window.outter.style.boxShadow = '0 16px 40px rgba(0, 0, 0, 0.72)'
